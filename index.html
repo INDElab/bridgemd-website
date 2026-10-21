@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BridgeMD — Automated metadata generation for cross-disciplinary data reuse</title>
+  <meta name="description" content="BridgeMD uses large language models to generate dataset documentation tailored to specific groups of data reusers, built into open-source research data repositories.">
+  <link rel="canonical" href="https://bridgemd.github.io/">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1319" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="BridgeMD — Automated metadata generation for cross-disciplinary data reuse">
+  <meta property="og:description" content="BridgeMD uses large language models to generate dataset documentation tailored to specific groups of data reusers, built into open-source research data repositories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bridgemd.github.io/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__mark" width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+          <path class="brand__arc" d="M8 44c7-18 17-27 24-27s17 9 24 27" fill="none" stroke-width="5" stroke-linecap="round"/>
+          <path d="M8 44h48" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <path d="M21 44V32M32 44V26M43 44V32" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        BridgeMD
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3h14M1 8h14M1 13h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Menu
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="index.html#work-packages">Work packages</a>
+        <a href="index.html#use-cases">Use cases</a>
+        <a href="team.html">Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div>
+            <p class="eyebrow eyebrow--accent">TDCC-NES &middot; Natural &amp; Engineering Sciences</p>
+            <h1>BridgeMD</h1>
+            <p class="hero__sub">Bridging the distance between data producer and data reuser
+            through automated metadata generation.</p>
+            <p>Datasets are documented once, for an audience their creators can only guess at.
+            BridgeMD uses large language models to generate documentation written for a specific
+            group of reusers &mdash; built into the repository software researchers already use.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="#work-packages">Work packages</a>
+              <a class="btn btn--ghost" href="#use-cases">Use cases</a>
+            </div>
+          </div>
+          <figure class="hero__figure">
+          <svg viewBox="0 0 520 320" class="diagram" role="img" aria-labelledby="dia-t dia-d">
+            <title id="dia-t">From one dataset to many tailored descriptions</title>
+            <desc id="dia-d">A dataset with its existing metadata passes through BridgeMD, which
+            generates documentation tailored to a materials researcher, a machine learning
+            researcher and a plant biologist.</desc>
+            <path class="d-arc" d="M24 292c70-146 170-214 236-214s166 68 236 214"/>
+            <g>
+              <rect class="d-card" x="6" y="124" width="148" height="72" rx="12"/>
+              <text class="d-label" x="23" y="151">DATA PRODUCER</text>
+              <text class="d-text" x="23" y="172">Dataset +</text>
+              <text class="d-text" x="23" y="188">existing metadata</text>
+            </g>
+            <g>
+              <rect class="d-engine" x="196" y="133" width="126" height="54" rx="27"/>
+              <text class="d-engine-name" x="259" y="157">BridgeMD</text>
+              <text class="d-engine-sub" x="259" y="175">LLM + reuser profile</text>
+            </g>
+            <g class="d-links">
+              <path d="M154 160h30" marker-end="url(#ar)"/>
+              <path d="M322 155C346 155 344 70 360 70" marker-end="url(#ar)"/>
+              <path d="M322 160h34" marker-end="url(#ar)"/>
+              <path d="M322 165C346 165 344 250 360 250" marker-end="url(#ar)"/>
+            </g>
+            <g>
+              <rect class="d-pill" x="372" y="46" width="142" height="46" rx="10"/>
+              <text class="d-text" x="388" y="67">Materials</text>
+              <text class="d-text" x="388" y="83">researcher</text>
+              <rect class="d-pill" x="372" y="137" width="142" height="46" rx="10"/>
+              <text class="d-text" x="388" y="158">Machine learning</text>
+              <text class="d-text" x="388" y="174">researcher</text>
+              <rect class="d-pill" x="372" y="228" width="142" height="46" rx="10"/>
+              <text class="d-text" x="388" y="249">Plant</text>
+              <text class="d-text" x="388" y="265">biologist</text>
+            </g>
+            <text class="d-label d-label--center" x="443" y="26">DATA REUSERS</text>
+            <defs>
+              <marker id="ar" class="d-arrow" viewBox="0 0 10 10" refX="7.5" refY="5"
+                      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 1l8 4-8 4z"/>
+              </marker>
+            </defs>
+          </svg>
+        </figure>
+        </div>
+
+        <div class="snapshot">
+          <p class="snapshot__title">Project snapshot</p>
+          <div class="snap snap--wide">
+            <span class="snap__label">Full title</span>
+            <div class="snap__value">BridgeMD: Bridging the Distance between Data Producer and Data
+            Reuser through Automated Metadata Generation</div>
+          </div>
+          <div class="snap">
+            <span class="snap__label">Programme</span>
+            <div class="snap__value">Thematic Digital Competence Centres (TDCC)</div>
+            <div class="snap__sub">Natural &amp; Engineering Sciences &middot; FAIR data &middot; cross-field collaborations</div>
+          </div>
+          <div class="snap">
+            <span class="snap__label">Duration</span>
+            <div class="snap__value">24 months</div>
+            <div class="snap__sub">6 work packages &middot; 4 universities</div>
+          </div>
+          <div class="snap">
+            <span class="snap__label">Lead institution</span>
+            <div class="snap__value">University of Amsterdam</div>
+            <div class="snap__sub">Faculty of Science &middot; Informatics Institute</div>
+          </div>
+          <div class="snap">
+            <span class="snap__label">Project leader</span>
+            <div class="snap__value snap__person">
+              <span class="mono" aria-hidden="true">PG</span>Prof. dr. Paul Groth
+            </div>
+            <div class="snap__sub">Work package leader, WP2 &amp; WP6</div>
+          </div>
+          <div class="snap snap--wide">
+            <span class="snap__label">Evaluation domains</span>
+            <ul class="pills" style="margin-top:.15rem">
+              <li class="pill pill--bridge">Machine learning</li>
+              <li class="pill pill--bridge">Construction materials</li>
+              <li class="pill pill--bridge">Plant omics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Metadata is written without knowing who will read it</h2>
+          <p class="lead">Data producers cannot anticipate every future reuser, and documenting a
+          dataset for all of them is prohibitively costly. So datasets stay underused outside the
+          community that made them.</p>
+        </div>
+        <div class="two-col">
+          <p>In construction materials research alone, materials scientists, process engineers and
+          civil engineers generate different data, use different methods and different terminology
+          &mdash; while each would benefit from reusing the others' data.</p>
+          <p>The same gap runs between algorithm researchers and domain specialists in machine
+          learning, and across the omics datasets that plant biosynthesis research needs to
+          combine.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>What the project does</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <span class="card__n">01 &mdash; Generate</span>
+            <h3>Documentation for a named audience</h3>
+            <p>Methods that turn a dataset, its existing metadata and a reuser profile into
+            contextualised descriptions, vocabulary mappings and example code.</p>
+          </div>
+          <div class="card">
+            <span class="card__n">02 &mdash; Integrate</span>
+            <h3>Inside existing repositories</h3>
+            <p>The open-source system built into <a href="https://www.openml.org">OpenML</a> and a
+            second repository stack, so it reaches researchers where their data already lives.</p>
+          </div>
+          <div class="card">
+            <span class="card__n">03 &mdash; Validate</span>
+            <h3>Evidence that it can be trusted</h3>
+            <p>Quality metrics and a shared evaluation protocol that test AI-generated metadata for
+            reliability across three very different domains.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work-packages">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Work packages</p>
+          <h2>Six work packages over two years</h2>
+          <p>Two build the system, three test it in a demanding domain, one takes it to the wider
+          community.</p>
+        </div>
+        <div class="wp-grid">
+        <article class="wp-tile" id="wp1">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP1</span>
+            <span class="wp-out">Open-source system</span>
+          </div>
+          <h3>Methods for Metadata Generation</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">University of Amsterdam</span>
+          </div>
+          <p>Prompt engineering and fine-tuning of LLMs to turn a dataset, its metadata and a reuser profile into tailored documentation &mdash; plus the evaluation protocol that tests whether it is reliable.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">Reuser profiles</li>
+            <li class="pill">Prompting &amp; fine-tuning</li>
+            <li class="pill">Quality metrics</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">DM</span><span class="person-chip"><strong>Dr. Daphne Miedema</strong></span></div>
+          </div>
+        </article>
+        <article class="wp-tile" id="wp2">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP2</span>
+            <span class="wp-out">Integrations</span>
+          </div>
+          <h3>Integration with Repository Software</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">University of Amsterdam</span>
+          </div>
+          <p>Builds the system into OpenML and one further repository stack, through each project's own open-source community process, so the methods outlive the project.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">OpenML</li>
+            <li class="pill">InvenioRDM</li>
+            <li class="pill">djehuty</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">PG</span><span class="person-chip"><strong>Prof. dr. Paul Groth</strong></span></div>
+          </div>
+        </article>
+        <article class="wp-tile" id="wp3">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP3</span>
+            <span class="wp-out">Evaluation report</span>
+          </div>
+          <h3>Use Case &mdash; Machine Learning</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">TU Eindhoven</span>
+          </div>
+          <p>Generates and evaluates metadata for OpenML datasets so they can be picked up in machine learning pipelines by scientists from outside the field.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">OpenML</li>
+            <li class="pill">Croissant</li>
+            <li class="pill">ML pipelines</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">JV</span><span class="person-chip"><strong>Dr. Joaquin Vanschoren</strong></span></div>
+          </div>
+        </article>
+        <article class="wp-tile" id="wp4">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP4</span>
+            <span class="wp-out">Evaluation report</span>
+          </div>
+          <h3>Use Case &mdash; Construction Materials</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">TU Delft</span>
+          </div>
+          <p>Tests whether generated metadata can bridge materials scientists, process engineers and civil engineers &mdash; a direct test of the reuser profiles from WP1.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">RILEM</li>
+            <li class="pill">Construction 4.0</li>
+            <li class="pill">Practitioner reuse</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">SB</span><span class="person-chip"><strong>Dr. Sandra Barbosa Nunes</strong></span></div>
+          </div>
+        </article>
+        <article class="wp-tile" id="wp5">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP5</span>
+            <span class="wp-out">Evaluation report</span>
+          </div>
+          <h3>Use Case &mdash; Plant Omics</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">Wageningen University</span>
+          </div>
+          <p>Generates metadata that lets transcriptomics and metabolomics datasets be paired via the common ontologies already used in the field.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">Transcriptomics</li>
+            <li class="pill">Metabolomics</li>
+            <li class="pill">Ontology alignment</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">FW</span><span class="person-chip"><strong>Felicia Wolters</strong></span></div>
+          </div>
+        </article>
+        <article class="wp-tile" id="wp6">
+          <div class="wp-tile__top">
+            <span class="wp-badge">WP6</span>
+            <span class="wp-out">Datathon report</span>
+          </div>
+          <h3>Community Testing, Dissemination &amp; Management</h3>
+          <div class="wp-tile__lead">
+            <span class="wp-tile__lead-label">Lead</span>
+            <span class="wp-tile__lead-name">University of Amsterdam</span>
+          </div>
+          <p>Runs two open datathons where participants bring their own data, coordinates the consortium and carries the results to the wider research data community.</p>
+          <div class="wp-tile__foot">
+            <ul class="pills">
+            <li class="pill">Datathons</li>
+            <li class="pill">Dissemination</li>
+            <li class="pill">Coordination</li>
+            </ul>
+          <div class="wp-tile__person"><span class="mono" aria-hidden="true">PG</span><span class="person-chip"><strong>Prof. dr. Paul Groth</strong></span></div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="use-cases">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Evaluation use cases</p>
+          <h2>Tested where data practices differ most</h2>
+          <p>Each use case is led by an expert in the field and applies the same two-step test:
+          generate metadata with the WP1 methods, then evaluate its quality against a protocol built
+          with WP1.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card uc-tile">
+            <div class="uc-tile__head">
+              <span class="wp-badge">WP3</span>
+              <h3>Machine learning</h3>
+            </div>
+            <p>OpenML holds thousands of richly described datasets, yet much of that documentation
+            is not written for the scientists who want to reuse them. A platform and a test case at
+            once.</p>
+            <div class="uc-tile__foot">
+              <span class="person-chip"><span class="mono" aria-hidden="true">JV</span>
+              <strong>Dr. Joaquin Vanschoren</strong></span>
+            </div>
+          </div>
+          <div class="card uc-tile">
+            <div class="uc-tile__head">
+              <span class="wp-badge">WP4</span>
+              <h3>Construction materials</h3>
+            </div>
+            <p>A sector of 18 million people in the EU, with a value chain running from raw
+            materials to maintenance. RILEM's technical committee is building the metadata practice
+            this use case plugs into.</p>
+            <div class="uc-tile__foot">
+              <span class="person-chip"><span class="mono" aria-hidden="true">SB</span>
+              <strong>Dr. Sandra Barbosa Nunes</strong></span>
+            </div>
+          </div>
+          <div class="card uc-tile">
+            <div class="uc-tile__head">
+              <span class="wp-badge">WP5</span>
+              <h3>Plant omics</h3>
+            </div>
+            <p>Pairing transcriptomics with metabolomics reveals biosynthesis pathways, but only
+            where metadata is aligned across omics resources &mdash; today a resource-intensive
+            manual job.</p>
+            <div class="uc-tile__foot">
+              <span class="person-chip"><span class="mono" aria-hidden="true">FW</span>
+              <strong>Felicia Wolters</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Community testing</p>
+          <h2>Two open datathons</h2>
+          <p>Participants bring their own data and put the system to work on it. Four organisations
+          have already committed, each bringing a different kind of test.</p>
+        </div>
+        <div class="strip">
+          <div class="strip__cell">
+            <p class="strip__who">SURF</p>
+            <p class="strip__what">Metadata generated from compute artifacts during active analysis,
+            where provenance is usually lost.</p>
+          </div>
+          <div class="strip__cell">
+            <p class="strip__who">Utrecht University</p>
+            <p class="strip__what">The university repository, covering veterinary sciences,
+            humanities and social sciences.</p>
+          </div>
+          <div class="strip__cell">
+            <p class="strip__who">TU Eindhoven</p>
+            <p class="strip__what">The TU/e Research Cockpit, a central service for navigating
+            research data management.</p>
+          </div>
+          <div class="strip__cell">
+            <p class="strip__who">UvA Library</p>
+            <p class="strip__what">The central RDM repository of the university, through the local
+            Digital Competence Centre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="partners">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Partners</p>
+          <h2>Who is involved</h2>
+        </div>
+        <div class="group">
+          <p class="group-label">Academic partners</p>
+          <div class="partner-grid">
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">UvA</span>
+              <div><div class="partner__name">University of Amsterdam</div>
+              <div class="partner__role">Lead &middot; WP1, WP2, WP6</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">TU/e</span>
+              <div><div class="partner__name">TU Eindhoven</div>
+              <div class="partner__role">WP3 lead &middot; machine learning</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">TUD</span>
+              <div><div class="partner__name">TU Delft</div>
+              <div class="partner__role">WP4 lead &middot; construction materials</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">WUR</span>
+              <div><div class="partner__name">Wageningen University</div>
+              <div class="partner__role">WP5 lead &middot; plant omics</div></div></div>
+          </div>
+        </div>
+        <div class="group">
+          <p class="group-label">Community affiliates &amp; co-funders</p>
+          <div class="partner-grid">
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">SURF</span>
+              <div><div class="partner__name">SURF</div>
+              <div class="partner__role">Research Partnerships</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">UU</span>
+              <div><div class="partner__name">Utrecht University</div>
+              <div class="partner__role">University Library</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">TU/e</span>
+              <div><div class="partner__name">TU/e Research Data Infrastructure Lab</div>
+              <div class="partner__role">Research data infrastructure</div></div></div>
+            <div class="partner"><span class="mono mono--lg mono--sq" aria-hidden="true">UvA</span>
+              <div><div class="partner__name">UvA University Library</div>
+              <div class="partner__role">Local Digital Competence Centre</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Have data you want reused elsewhere?</h2>
+            <p>The datathons are open to all interested parties. Contact the project leader,
+            Prof. dr. Paul Groth, at the Informatics Institute, University of Amsterdam.</p>
+            <!-- TODO: replace with a project contact email / mailing-list link once available. -->
+          </div>
+          <div><a class="btn btn--primary" href="team.html">Meet the team</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <p><strong>BridgeMD</strong> &mdash; Bridging the distance between data producer and data
+          reuser through automated metadata generation.</p>
+          <p>A 24-month project led by the Informatics Institute, University of Amsterdam, within the
+          Thematic Digital Competence Centre for Natural and Engineering Sciences (TDCC&#8209;NES).</p>
+        </div>
+        <div>
+          <ul>
+            <li><a href="index.html#work-packages">Work packages</a></li>
+            <li><a href="index.html#use-cases">Use cases</a></li>
+            <li><a href="index.html#partners">Partners</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="https://www.openml.org">OpenML</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bar">
+        <span>&copy; 2026 BridgeMD consortium &middot; content under CC&nbsp;BY&nbsp;4.0</span>
+        <span>Data reuse &middot; generative AI &middot; cross-disciplinary data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+</body>
+</html>
