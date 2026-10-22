@@ -42,11 +42,16 @@ assets/img/favicon.svg
   (`<li class="pill">`) and the WP lead with an initials monogram.
 - **Navigation and footer** are repeated in both pages — change both, and keep `aria-current="page"`
   on the link to the current page.
-- **Colour.** Each evaluation domain has its own colour, defined once as `--c-ml` (blue),
-  `--c-mat` (terracotta) and `--c-plant` (green), with `-soft` tints for backgrounds. The same
-  three run through the hero diagram, the WP3/WP4/WP5 badges, the use-case tiles' top edge and the
-  snapshot's domain pills, so the colour means something rather than decorating. WP6 uses
-  `--c-comm` (plum); WP1 and WP2 stay neutral.
+- **Colour.** Every work package has its own colour, defined once as a token with a `-soft` tint
+  for backgrounds: `--c-meth` (olive, WP1), `--c-integ` (raspberry, WP2), `--c-ml` (blue, WP3),
+  `--c-mat` (terracotta, WP4), `--c-plant` (green, WP5), `--c-comm` (plum, WP6). The three
+  evaluation-domain colours do double duty: `--c-ml`, `--c-mat` and `--c-plant` also carry the
+  hero diagram's reuser pills and arrows and the use-case tiles' top edge, so the colour means
+  something rather than decorating.
+
+  The six hues are spread around the wheel so that no two read alike at badge size (18°, 81°,
+  144°, 204°, 275°, 336°), and each is checked against its own tint for at least 4.5:1 contrast in
+  both colour schemes. If you add a seventh, the free gaps are around 110° and 240°.
 - **Partner logos** live in `assets/img/logos/` as icon-only marks (no wordmark), shown in a 46px
   white tile beside the partner name — white in both colour schemes, because most of these marks
   are dark. The full logos with wordmarks are kept in `assets/img/logos/wordmark/` in case they are

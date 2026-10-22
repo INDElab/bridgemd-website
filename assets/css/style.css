@@ -24,6 +24,10 @@
   --c-plant-soft:  #e2f0e7;
   --c-comm:        #6d4b86;
   --c-comm-soft:   #efe8f4;
+  --c-meth:        #5f6e14;
+  --c-meth-soft:   #f0f3dd;
+  --c-integ:       #a3335f;
+  --c-integ-soft:  #fae8ef;
   --tint:          #f4f6f8;
 
   /* panels that stay dark in both colour schemes */
@@ -61,6 +65,10 @@
     --c-plant-soft: #15251d;
     --c-comm:       #c0a2d2;
     --c-comm-soft:  #241c2c;
+    --c-meth:       #b9cf5a;
+    --c-meth-soft:  #1f2512;
+    --c-integ:      #eb9ab9;
+    --c-integ-soft: #2c1a22;
     --tint:         #121923;
     --invert-bg:     #1b2a3c;
     --invert-fg:     #eef1f5;
@@ -317,6 +325,8 @@ a.card h3 { color: var(--ink); }
   background: var(--paper); border: 1px solid var(--rule-2);
   color: var(--ink); padding: .22rem .5rem; border-radius: 6px;
 }
+.wp-badge--meth  { background: var(--c-meth-soft);  border-color: transparent; color: var(--c-meth); }
+.wp-badge--integ { background: var(--c-integ-soft); border-color: transparent; color: var(--c-integ); }
 .wp-badge--ml    { background: var(--c-ml-soft);    border-color: transparent; color: var(--c-ml); }
 .wp-badge--mat   { background: var(--c-mat-soft);   border-color: transparent; color: var(--c-mat); }
 .wp-badge--plant { background: var(--c-plant-soft); border-color: transparent; color: var(--c-plant); }
