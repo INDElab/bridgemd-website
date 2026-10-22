@@ -42,9 +42,24 @@ assets/img/favicon.svg
   (`<li class="pill">`) and the WP lead with an initials monogram.
 - **Navigation and footer** are repeated in both pages — change both, and keep `aria-current="page"`
   on the link to the current page.
-- **Partner logos:** partners currently show initials monograms (`<span class="mono mono--lg
-  mono--sq">`). To use real logos, drop image files in `assets/img/` and replace that span with an
-  `<img>` of the same size (38×38), keeping the `alt` text as the organisation name.
+- **Partner logos** live in `assets/img/logos/` as SVG, each shown in a white band above the
+  partner's name (white in both colour schemes, because most of the marks are dark). They were
+  taken from each organisation's own website on 22 October 2026:
+
+  | File | Organisation | Source |
+  | --- | --- | --- |
+  | `uva.svg` | University of Amsterdam | `uva.nl` logo sprite, English wordmark |
+  | `tue.svg` | TU Eindhoven | `tue.nl` icon sprite (`tueLogo`), recoloured to the site's own `#C72125` |
+  | `tudelft.svg` | TU Delft | inline logo symbol on `tudelft.nl`, set to black |
+  | `wur.svg` | Wageningen University & Research | `wur.nl/wurds/images/logos/` |
+  | `surf.svg` | SURF | `surf.nl/themes/surf/logo.svg` |
+  | `uu.svg` | Utrecht University | `uu.nl` English logo |
+
+  The TU/e and TU Delft marks are drawn with `currentColor` on their own sites, so a colour had to
+  be chosen: TU/e uses the red its site computes, TU Delft black (its site shows white on a dark
+  header). These are third-party trademarks used to identify project partners — worth a quick check
+  against each organisation's brand guidelines, and against what the partners themselves prefer,
+  before the site goes public.
 
 ## Deployment
 
@@ -56,11 +71,11 @@ The repository is named `bridgemd.github.io`, so GitHub Pages serves it at
 
 ## To do before going public
 
-- Add a contact email or mailing-list link (see the `TODO` comment near the bottom of `index.html`).
-- Confirm the funding/acknowledgement wording and add a link to the TDCC-NES website in the footer
-  of both pages.
-- Add project start and end dates — the snapshot table currently says "24 months" with no timeline.
-- Optionally swap the partner monograms for real logos (see Editing above).
+- Confirm the partner logos are used in line with each organisation's brand guidelines (see
+  Editing above).
+- Check the canonical/`og:url` tags and the absolute paths in `404.html` against the URL the site
+  is actually served from — they currently assume `https://bridgemd.github.io/`, which is not where
+  a repository named `bridgemd.github.io` under the `INDElab` account is published.
 
 ## Licence
 
