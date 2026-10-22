@@ -298,6 +298,8 @@ a:hover { color: var(--ink); }
   display: block; font-size: .78rem; font-weight: 700; letter-spacing: .04em;
   color: var(--accent); margin-bottom: .5rem;
 }
+.card__n--meth  { color: var(--c-meth); }
+.card__n--integ { color: var(--c-integ); }
 .card__n--mat   { color: var(--c-mat); }
 .card__n--ml    { color: var(--c-ml); }
 .card__n--plant { color: var(--c-plant); }
