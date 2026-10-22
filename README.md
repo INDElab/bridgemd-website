@@ -42,40 +42,54 @@ assets/img/favicon.svg
   (`<li class="pill">`) and the WP lead with an initials monogram.
 - **Navigation and footer** are repeated in both pages — change both, and keep `aria-current="page"`
   on the link to the current page.
-- **Partner logos** live in `assets/img/logos/` as SVG, each shown in a white band above the
-  partner's name (white in both colour schemes, because most of the marks are dark). They were
-  taken from each organisation's own website on 22 October 2026:
+- **Colour.** Each evaluation domain has its own colour, defined once as `--c-ml` (blue),
+  `--c-mat` (terracotta) and `--c-plant` (green), with `-soft` tints for backgrounds. The same
+  three run through the hero diagram, the WP3/WP4/WP5 badges, the use-case tiles' top edge and the
+  snapshot's domain pills, so the colour means something rather than decorating. WP6 uses
+  `--c-comm` (plum); WP1 and WP2 stay neutral.
+- **Partner logos** live in `assets/img/logos/` as icon-only marks (no wordmark), shown in a 46px
+  white tile beside the partner name — white in both colour schemes, because most of these marks
+  are dark. The full logos with wordmarks are kept in `assets/img/logos/wordmark/` in case they are
+  wanted somewhere with more room. Taken from each organisation's own website on 22 October 2026:
 
-  | File | Organisation | Source |
-  | --- | --- | --- |
-  | `uva.svg` | University of Amsterdam | `uva.nl` logo sprite, English wordmark |
-  | `tue.svg` | TU Eindhoven | `tue.nl` icon sprite (`tueLogo`), recoloured to the site's own `#C72125` |
-  | `tudelft.svg` | TU Delft | inline logo symbol on `tudelft.nl`, set to black |
-  | `wur.svg` | Wageningen University & Research | `wur.nl/wurds/images/logos/` |
-  | `surf.svg` | SURF | `surf.nl/themes/surf/logo.svg` |
-  | `uu.svg` | Utrecht University | `uu.nl` English logo |
+  | File | Organisation | Mark | Source |
+  | --- | --- | --- | --- |
+  | `uva.svg` | University of Amsterdam | coat-of-arms square | `uva.nl` logo sprite (`logo-uva-mini`) |
+  | `tue.svg` | TU Eindhoven | TU/e | `tue.nl` icon sprite, in the site's own `#C72125` |
+  | `tudelft.svg` | TU Delft | flame | inline logo on `tudelft.nl`, cropped to the flame, set to black |
+  | `wur.svg` | Wageningen UR | green/blue mark | `wur.nl/wurds/images/logos/`, cropped |
+  | `surf.svg` | SURF | SURF flag | `surf.nl/themes/surf/logo.svg`, cropped |
+  | `uu.svg` | Utrecht University | sun seal | `uu.nl` English logo, cropped |
 
-  The TU/e and TU Delft marks are drawn with `currentColor` on their own sites, so a colour had to
-  be chosen: TU/e uses the red its site computes, TU Delft black (its site shows white on a dark
-  header). These are third-party trademarks used to identify project partners — worth a quick check
-  against each organisation's brand guidelines, and against what the partners themselves prefer,
+  The icon crops are `viewBox` changes only — no path data was altered, so the marks keep their
+  proportions. The TU/e and TU Delft logos are drawn with `currentColor` on their own sites, so a
+  colour had to be chosen: TU/e uses the red its site computes, TU Delft black (its own site shows
+  it white on a dark header). These are third-party trademarks used to identify project partners —
+  worth checking against each organisation's brand guidelines, and with the partners themselves,
   before the site goes public.
 
 ## Deployment
 
-The repository is named `bridgemd.github.io`, so GitHub Pages serves it at
-`https://bridgemd.github.io/` from the repository root.
+Hosting is not settled yet. The site is plain static files, so any static host works; it needs no
+build command and no output directory.
 
-1. Push this folder to the `main` branch of the `bridgemd/bridgemd.github.io` repository.
-2. In **Settings → Pages**, set *Source* to "Deploy from a branch", branch `main`, folder `/ (root)`.
+- **Vercel** (the current plan, e.g. `bridgemd.vercel.app`): import the GitHub repository, framework
+  preset "Other", leave build and output settings empty.
+- **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / `/ (root)`. Note that the
+  repository lives under the `INDElab` account, so Pages would serve it at
+  `https://indelab.github.io/bridgemd.github.io/`, not at `bridgemd.github.io` — that hostname
+  needs a repository named `indelab.github.io`. Pages also needs the repository to be public
+  unless the organisation is on GitHub Enterprise Cloud.
+
+Whichever is chosen, update the `canonical` and `og:url` tags in `index.html` and `team.html`;
+they currently read `https://bridgemd.github.io/`. The absolute asset paths in `404.html` are
+correct for any host that serves the site at its domain root (Vercel included).
 
 ## To do before going public
 
 - Confirm the partner logos are used in line with each organisation's brand guidelines (see
   Editing above).
-- Check the canonical/`og:url` tags and the absolute paths in `404.html` against the URL the site
-  is actually served from — they currently assume `https://bridgemd.github.io/`, which is not where
-  a repository named `bridgemd.github.io` under the `INDElab` account is published.
+- Set the `canonical`/`og:url` tags to the final URL once hosting is decided (see Deployment).
 
 ## Licence
 

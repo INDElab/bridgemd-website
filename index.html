@@ -80,28 +80,32 @@
               <text class="d-engine-sub" x="259" y="175">LLM + reuser profile</text>
             </g>
             <g class="d-links">
-              <path d="M154 160h30" marker-end="url(#ar)"/>
-              <path d="M322 155C346 155 344 70 360 70" marker-end="url(#ar)"/>
-              <path d="M322 160h34" marker-end="url(#ar)"/>
-              <path d="M322 165C346 165 344 250 360 250" marker-end="url(#ar)"/>
+              <path class="d-link--base" d="M154 160h30" marker-end="url(#ar-base)"/>
+              <path class="d-link--mat" d="M322 155C346 155 344 70 360 70" marker-end="url(#ar-mat)"/>
+              <path class="d-link--ml" d="M322 160h34" marker-end="url(#ar-ml)"/>
+              <path class="d-link--plant" d="M322 165C346 165 344 250 360 250" marker-end="url(#ar-plant)"/>
             </g>
             <g>
-              <rect class="d-pill" x="372" y="46" width="142" height="46" rx="10"/>
+              <rect class="d-pill d-pill--mat" x="372" y="46" width="142" height="46" rx="10"/>
               <text class="d-text" x="388" y="67">Materials</text>
               <text class="d-text" x="388" y="83">researcher</text>
-              <rect class="d-pill" x="372" y="137" width="142" height="46" rx="10"/>
+              <rect class="d-pill d-pill--ml" x="372" y="137" width="142" height="46" rx="10"/>
               <text class="d-text" x="388" y="158">Machine learning</text>
               <text class="d-text" x="388" y="174">researcher</text>
-              <rect class="d-pill" x="372" y="228" width="142" height="46" rx="10"/>
+              <rect class="d-pill d-pill--plant" x="372" y="228" width="142" height="46" rx="10"/>
               <text class="d-text" x="388" y="249">Plant</text>
               <text class="d-text" x="388" y="265">biologist</text>
             </g>
             <text class="d-label d-label--center" x="443" y="26">DATA REUSERS</text>
             <defs>
-              <marker id="ar" class="d-arrow" viewBox="0 0 10 10" refX="7.5" refY="5"
-                      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0 1l8 4-8 4z"/>
-              </marker>
+              <marker id="ar-base" class="d-arrow d-arrow--base" viewBox="0 0 10 10" refX="7.5" refY="5"
+                      markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1l8 4-8 4z"/></marker>
+              <marker id="ar-mat" class="d-arrow d-arrow--mat" viewBox="0 0 10 10" refX="7.5" refY="5"
+                      markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1l8 4-8 4z"/></marker>
+              <marker id="ar-ml" class="d-arrow d-arrow--ml" viewBox="0 0 10 10" refX="7.5" refY="5"
+                      markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1l8 4-8 4z"/></marker>
+              <marker id="ar-plant" class="d-arrow d-arrow--plant" viewBox="0 0 10 10" refX="7.5" refY="5"
+                      markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1l8 4-8 4z"/></marker>
             </defs>
           </svg>
         </figure>
@@ -140,9 +144,9 @@
           <div class="snap snap--wide">
             <span class="snap__label">Evaluation domains</span>
             <ul class="pills" style="margin-top:.15rem">
-              <li class="pill pill--bridge">Machine learning</li>
-              <li class="pill pill--bridge">Construction materials</li>
-              <li class="pill pill--bridge">Plant omics</li>
+              <li class="pill pill--ml">Machine learning</li>
+              <li class="pill pill--mat">Construction materials</li>
+              <li class="pill pill--plant">Plant omics</li>
             </ul>
           </div>
         </div>
@@ -175,19 +179,19 @@
         </div>
         <div class="grid-3">
           <div class="card">
-            <span class="card__n">01 &mdash; Generate</span>
+            <span class="card__n card__n--mat">01 &mdash; Generate</span>
             <h3>Documentation for a named audience</h3>
             <p>Methods that turn a dataset, its existing metadata and a reuser profile into
             contextualised descriptions, vocabulary mappings and example code.</p>
           </div>
           <div class="card">
-            <span class="card__n">02 &mdash; Integrate</span>
+            <span class="card__n card__n--ml">02 &mdash; Integrate</span>
             <h3>Inside existing repositories</h3>
             <p>The open-source system built into <a href="https://www.openml.org">OpenML</a> and a
             second repository stack, so it reaches researchers where their data already lives.</p>
           </div>
           <div class="card">
-            <span class="card__n">03 &mdash; Validate</span>
+            <span class="card__n card__n--plant">03 &mdash; Validate</span>
             <h3>Evidence that it can be trusted</h3>
             <p>Quality metrics and a shared evaluation protocol that test AI-generated metadata for
             reliability across three very different domains.</p>
@@ -247,7 +251,7 @@
         </article>
         <article class="wp-tile" id="wp3">
           <div class="wp-tile__top">
-            <span class="wp-badge">WP3</span>
+            <span class="wp-badge wp-badge--ml">WP3</span>
             <span class="wp-out">Evaluation report</span>
           </div>
           <h3>Use Case &mdash; Machine Learning</h3>
@@ -267,7 +271,7 @@
         </article>
         <article class="wp-tile" id="wp4">
           <div class="wp-tile__top">
-            <span class="wp-badge">WP4</span>
+            <span class="wp-badge wp-badge--mat">WP4</span>
             <span class="wp-out">Evaluation report</span>
           </div>
           <h3>Use Case &mdash; Construction Materials</h3>
@@ -287,7 +291,7 @@
         </article>
         <article class="wp-tile" id="wp5">
           <div class="wp-tile__top">
-            <span class="wp-badge">WP5</span>
+            <span class="wp-badge wp-badge--plant">WP5</span>
             <span class="wp-out">Evaluation report</span>
           </div>
           <h3>Use Case &mdash; Plant Omics</h3>
@@ -307,7 +311,7 @@
         </article>
         <article class="wp-tile" id="wp6">
           <div class="wp-tile__top">
-            <span class="wp-badge">WP6</span>
+            <span class="wp-badge wp-badge--comm">WP6</span>
             <span class="wp-out">Datathon report</span>
           </div>
           <h3>Community Testing, Dissemination &amp; Management</h3>
@@ -339,9 +343,9 @@
           with WP1.</p>
         </div>
         <div class="grid-3">
-          <div class="card uc-tile">
+          <div class="card uc-tile uc-tile--ml">
             <div class="uc-tile__head">
-              <span class="wp-badge">WP3</span>
+              <span class="wp-badge wp-badge--ml">WP3</span>
               <h3>Machine learning</h3>
             </div>
             <p>OpenML holds thousands of richly described datasets, yet much of that documentation
@@ -352,9 +356,9 @@
               <strong>Dr. Joaquin Vanschoren</strong></span>
             </div>
           </div>
-          <div class="card uc-tile">
+          <div class="card uc-tile uc-tile--mat">
             <div class="uc-tile__head">
-              <span class="wp-badge">WP4</span>
+              <span class="wp-badge wp-badge--mat">WP4</span>
               <h3>Construction materials</h3>
             </div>
             <p>A sector of 18 million people in the EU, with a value chain running from raw
@@ -365,9 +369,9 @@
               <strong>Dr. Sandra Barbosa Nunes</strong></span>
             </div>
           </div>
-          <div class="card uc-tile">
+          <div class="card uc-tile uc-tile--plant">
             <div class="uc-tile__head">
-              <span class="wp-badge">WP5</span>
+              <span class="wp-badge wp-badge--plant">WP5</span>
               <h3>Plant omics</h3>
             </div>
             <p>Pairing transcriptomics with metabolomics reveals biosynthesis pathways, but only
