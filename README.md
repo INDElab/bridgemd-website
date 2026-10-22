@@ -49,13 +49,13 @@ assets/img/favicon.svg
   hero diagram's reuser pills and arrows and the use-case tiles' top edge, so the colour means
   something rather than decorating.
 
-  **This branch is a variant:** WP1 is gold (41°) rather than the olive (81°) on `main`. Gold is
-  warmer and brighter, but it sits only ~23° from WP4's terracotta, so the two badges read as
-  related — WP1 is directly above WP4 in the work-package grid. Olive has the larger separation;
-  gold has the more cheerful colour. To open that gap, WP4's colour on this branch is also darker
-  and redder than on `main` — brick `#9c3a22` (12°) instead of terracotta `#b5542c` (18°) — which
-  also lifts its badge contrast from 4.2:1 to 5.7:1. Note that `--accent`, the terracotta used for
-  links and eyebrow labels, is unchanged.
+  The six hues are spread so that no two read alike at badge size (12°, 41°, 144°, 204°, 275°,
+  336°), and each is checked against its own tint for at least 4.5:1 contrast in both colour
+  schemes. WP1's gold and WP4's brick are the closest pair, at 29°, and WP1 sits directly above
+  WP4 in the grid — that is why WP4 is brick `#9c3a22` rather than the more orange terracotta it
+  started as. Note that `--accent`, the terracotta still used for links and eyebrow labels, is a
+  separate token and is unchanged. If you add a seventh colour, the free gaps are around 80° and
+  240°.
 - **Partner logos** live in `assets/img/logos/` as icon-only marks (no wordmark), shown in a 46px
   white tile beside the partner name — white in both colour schemes, because most of these marks
   are dark. The full logos with wordmarks are kept in `assets/img/logos/wordmark/` in case they are
