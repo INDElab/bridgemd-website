@@ -44,7 +44,7 @@ assets/img/favicon.svg
   on the link to the current page.
 - **Colour.** Every work package has its own colour, defined once as a token with a `-soft` tint
   for backgrounds: `--c-meth` (gold, WP1), `--c-integ` (raspberry, WP2), `--c-ml` (blue, WP3),
-  `--c-mat` (terracotta, WP4), `--c-plant` (green, WP5), `--c-comm` (plum, WP6). The three
+  `--c-mat` (brick red, WP4), `--c-plant` (green, WP5), `--c-comm` (plum, WP6). The three
   evaluation-domain colours do double duty: `--c-ml`, `--c-mat` and `--c-plant` also carry the
   hero diagram's reuser pills and arrows and the use-case tiles' top edge, so the colour means
   something rather than decorating.
@@ -52,7 +52,10 @@ assets/img/favicon.svg
   **This branch is a variant:** WP1 is gold (41°) rather than the olive (81°) on `main`. Gold is
   warmer and brighter, but it sits only ~23° from WP4's terracotta, so the two badges read as
   related — WP1 is directly above WP4 in the work-package grid. Olive has the larger separation;
-  gold has the more cheerful colour. Everything else is identical to `main`.
+  gold has the more cheerful colour. To open that gap, WP4's colour on this branch is also darker
+  and redder than on `main` — brick `#9c3a22` (12°) instead of terracotta `#b5542c` (18°) — which
+  also lifts its badge contrast from 4.2:1 to 5.7:1. Note that `--accent`, the terracotta used for
+  links and eyebrow labels, is unchanged.
 - **Partner logos** live in `assets/img/logos/` as icon-only marks (no wordmark), shown in a 46px
   white tile beside the partner name — white in both colour schemes, because most of these marks
   are dark. The full logos with wordmarks are kept in `assets/img/logos/wordmark/` in case they are
