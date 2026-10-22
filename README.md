@@ -1,4 +1,4 @@
-# bridgemd.github.io
+# bridgemd-website
 
 Project website for **BridgeMD — Bridging the Distance between Data Producer and Data Reuser
 through Automated Metadata Generation**, a 24-month project within the Thematic Digital Competence
@@ -79,26 +79,29 @@ assets/img/favicon.svg
 
 ## Deployment
 
-Hosting is not settled yet. The site is plain static files, so any static host works; it needs no
-build command and no output directory.
+Live at **https://indelab.github.io/bridgemd-website/**, served by GitHub Pages from the `main`
+branch, root folder. Pushing to `main` redeploys.
 
-- **Vercel** (the current plan, e.g. `bridgemd.vercel.app`): import the GitHub repository, framework
-  preset "Other", leave build and output settings empty.
-- **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / `/ (root)`. Note that the
-  repository lives under the `INDElab` account, so Pages would serve it at
-  `https://indelab.github.io/bridgemd.github.io/`, not at `bridgemd.github.io` — that hostname
-  needs a repository named `indelab.github.io`. Pages also needs the repository to be public
-  unless the organisation is on GitHub Enterprise Cloud.
+That URL is a placeholder: a custom domain is planned once the project starts. The hostname
+`bridgemd.github.io` is not available to this account — it would need a repository named
+`indelab.github.io` — and `github.com/BridgeMD` and `gitlab.com/BridgeMD` are both taken.
 
-Whichever is chosen, update the `canonical` and `og:url` tags in `index.html` and `team.html`;
-they currently read `https://bridgemd.github.io/`. The absolute asset paths in `404.html` are
-correct for any host that serves the site at its domain root (Vercel included).
+The repository is public because GitHub Pages only serves private repositories on GitHub
+Enterprise Cloud, and the INDElab organisation is on the Team plan.
+
+**When the domain arrives:** add it under Settings → Pages → Custom domain, commit a `CNAME` file,
+then update two things in this repository — the `canonical`/`og:url` tags in `index.html` and
+`team.html`, and the three absolute paths in `404.html`, which currently carry the
+`/bridgemd-website/` prefix that a project site needs and a domain root does not.
+
+The site is plain static files, so any other static host works too (Vercel, Netlify): no build
+command, no output directory, framework preset "Other".
 
 ## To do before going public
 
 - Confirm the partner logos are used in line with each organisation's brand guidelines (see
   Editing above).
-- Set the `canonical`/`og:url` tags to the final URL once hosting is decided (see Deployment).
+- Point the site at a custom domain once the project starts (see Deployment).
 
 ## Licence
 
